@@ -1,0 +1,102 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// 共通
+.post-content{
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding: 20px 30px;
+  margin: 0 10px;
+}
+//index
+.posts-{
+  &content{
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+    margin: 0 10px;
+  }
+  &img{
+    width: 20%;
+  }
+  &img img{
+    width: 100%;
+  }
+  &text{
+    flex-direction: column;
+    width: 80%;
+    margin-left: 2px;
+  }
+  &user{
+
+  }
+  &tweet{
+    font-size: 20px;
+  }
+  &icon{
+    text-align: right;
+  }
+  &date{
+    text-align: right;
+    color: #999;
+  }
+}
+
+//show
+.postshow-{
+  &content{
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 2px 6px #c1ced7;
+    padding: 20px 30px;
+    margin: 0 10px;
+  }
+  &user{
+    display: flex;
+    margin: 5px;
+  }
+  &img{
+    width: 20%;
+  }
+  &img img{
+    width: 100%;
+  }
+  &name{
+    width: 80%;
+    align-self: center;
+    margin-left: 1em;
+  }
+  &tweet{
+    margin: 5px;
+    font-size: 20px;
+  }
+  &icon{
+    text-align: right;
+  }
+  &date{
+    text-align: right;
+    color: #999;
+  }
+  &edit{
+    text-align: right;
+    margin: 3px;
+  }
+}
+
+/*new*/
+.post-new{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+.post-new textarea{
+  padding: 10px;
+  min-height: 140px;
+  border: 1px solid #c1ced7;
+  resize: none;
+  max-width: 300px;
+  width: 100%;
+}

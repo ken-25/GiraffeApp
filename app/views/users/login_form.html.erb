@@ -1,0 +1,19 @@
+<% provide(:title, "ログイン") %>
+<div class="main-content">
+  <h1>ログイン</h1>
+
+  <div class="user-new">
+    <dib class="error-message">
+      <%= @error_message %>
+    </dib>
+    <%= form_tag(login_users_path, method: :post) do %>
+      <p>メールアドレス</p>
+      <input name="email" type="email" value="<%= @email %>">
+      <p>パスワード</p>
+      <input name="password" type="password" value="<%= @password %>">
+      <br>
+      <input type="submit" value="ログイン">
+    <% end %>
+    <br><p><%= link_to("新規登録はこちら", new_user_path) %></p>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="main-content">
+  <h1>ユーザー一覧</h1>
+  <p>ここはユーザー一覧です</p>
+
+  <% @users.each do |user| %>
+    <div class="user-index">
+    <%= link_to(user.name, user_path(user.id)) %>
+    </div>
+  <% end %>
+  
+</div>

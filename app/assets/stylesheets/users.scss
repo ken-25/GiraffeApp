@@ -1,0 +1,32 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.user-index{
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  padding: 20px 30px;
+  margin: 0 10px;
+}
+.user-index table{
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px black;
+}
+.user-index table th{
+  border: solid 1px black;
+}
+.user-index table td{
+  border: dashed 1px black;
+}
+.user-show{
+  text-align:center;
+}
+.user-show img{
+  width: 200px;
+  max-width: 30%;
+  height: auto;
+  max-height: 30%;
+
+}
+//show

@@ -1,0 +1,21 @@
+<% posts.each do |post| %>
+<div class="posts-content">
+  <div class="posts-img">
+    <img src="<%= "/users_img/#{post.user.img_name}" %>" alt="">
+  </div>
+  <div class="posts-text">
+    <div class="posts-user">
+      <%= link_to(post.user.name, user_path(post.user_id)) %>
+    </div>
+    <div class="posts-tweet">
+      <%= link_to(safe_join(post.content.split("\n"), tag(:br)), post_path(post.id)) %>
+    </div>
+    <div class="posts-icon">
+      <%= render partial: 'likes/like', locals: { post: post } %>
+    </div>
+    <div class="posts-date">
+      <%= post.created_at %>
+    </div>
+  </div>
+</div>
+<% end %>

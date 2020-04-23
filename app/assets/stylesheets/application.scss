@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /* リセット */
+ h1, h2, h3, h4, h5, h6, p {
+   margin: 0;
+ }
+ html {
+   font-family: "遊ゴシック";
+ }
+ a {
+   text-decoration: none;
+ }
+ a:link, a:visited, a:hover, a:active {
+   color: #404040;
+ }
+ /*共通-----------------------------------*/
+  body {
+    color: #404040;
+    background-color: #f5f5f5;
+    margin: 0;
+    position: relative;
+    top: 0px;
+  }
+  form input[type="submit"] {
+   border: none;
+   cursor: pointer;
+   position: relative;
+   display: inline-block;
+   font-weight: bold;
+   padding: 0.25em 0.5em;
+   color: #404040;
+   background: #CCC;
+ }
+ form input[type="submit"]:hover {
+  color: #f5f5f5;
+  background: #404040;
+ }
+ .main-content{
+   position: relative;
+   width: 1000px;
+   max-width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: #fcfcfc;
+
+ }
+ .flash{
+   background-color: #fcfcfc;
+   text-align: center;
+   margin: 2px 0;
+   width: 100%;
+   height: auto;
+ }
+ .error-message{
+   color: red;
+ }
+
+ .favorite{
+   color: gold;
+ }
+ .nofavorite{
+   color: #404040;
+ }
+
+  /*header-----------------------------------*/
+  header{
+  }
+  .header-{
+    &header{
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 300px;
+    }
+    &topber{
+      height: 64px;
+      width: 100%;
+      display: flex;
+      background-color: rgba(255,255,255,0.5);
+    }
+    &mainlogo{
+      font-size: 30px;
+      font-weight: bold;
+      flex: none;
+      align-items: center;
+      padding-left: 5px;
+    }
+    &menus{
+      flex: auto;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      margin: 0 10px 0 0;
+    }
+    &menus a:hover {
+    background-color: rgba(255,255,255,0.7);
+    }
+    &menus li{
+      list-style: none;
+    }
+    &menus a{
+      display: block;
+      padding: 15px;
+    }
+    &backgroundimage{
+      position: absolute;
+      width: 100%;
+      height: 300px;
+      top: -250px;
+      z-index: -1;
+    }
+    &backgroundimage img{
+      width: 100%;
+    }
+  }
+
+  /* フッター */
+ footer{
+   width: 100%;
+   height: 400px;
+   background-color: gray;
+   margin-top: 20px;
+ }

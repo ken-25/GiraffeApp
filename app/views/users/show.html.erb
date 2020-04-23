@@ -1,0 +1,24 @@
+<div class="main-content">
+  <h1><%= @user.name %>さんのプロフィール</h1>
+
+  <div class="user-show">
+    <img src=<%= "/users_img/#{@user.img_name}" %> alt="profile_img">
+    <p>場所：<%= @user.place %></p>
+    <p>種類：<%= @user.giraffe_type %></p>
+    <p>体長：<%= @user.body_length %>m</p>
+    <p><%= @user.created_at %>に始めました</p>
+    <% if @current_user %>
+      <% if @user.id == @current_user.id || @current_user.admin? %>
+        <%= link_to("編集", edit_user_path) %>
+        <%= link_to("退会", @user , method: :delete) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h2><%= @user.name %>さんの投稿</h2>
+  <%= render partial: 'posts/posts', locals: { posts: @posts } %>
+
+  <h2><%= @user.name %>さんのお気に入り</h2>
+  <%= render partial: 'posts/posts', locals: { posts: @likes_posts } %>
+
+</div>

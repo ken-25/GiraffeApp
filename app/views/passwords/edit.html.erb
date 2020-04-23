@@ -1,0 +1,19 @@
+<div class="main-content">
+  <h1>パスワードの変更</h1>
+  <p></p>
+
+  <div class="user-new">
+    <dib class="error-message">
+      <%= @error_message %>
+    </dib>
+    <%= form_tag(user_password_path(@current_user.id), method: :patch) do %>
+    <p>現在のパスワード</p>
+    <input type="password" name="old_password" value="">
+    <p>新しいパスワード</p>
+    <input type="password" name="new_password" value="">
+    <p>新しいパスワード(確認用)</p>
+    <input type="password" name="confirmation_password" value="">
+    <input type="submit" value="保存">
+    <% end %>
+  </div>
+</div>

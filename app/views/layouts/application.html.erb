@@ -1,15 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>GiraffeApp</title>
+<html lang="ja">
+  <header>
+    <meta charset="UTF-8">
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <div class="header-header">
+      <div class="header-topber">
+        <div class="header-mainlogo">
+          <%= link_to("キリンったー","/") %>
+        </div>
+        <ul class="header-menus">
+          <% if session[:user_id] && @current_user %>
+          <li><%= link_to(@current_user.name, user_path(@current_user.id)) %></li>
+          <li><%= link_to("新規投稿", new_post_path) %></li>
+          <li><%= link_to("投稿一覧", posts_path) %></li>
+          <li><%= link_to("ログアウト", logout_users_path) %></li>
+          <% else %>
+          <li><%= link_to("About", about_path) %></li>
+          <li><%= link_to("新規登録", new_user_path) %></li>
+          <li><%= link_to("ログイン", login_form_users_path) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="header-backgroundimage">
+        <img src="/TopImage.jpg" alt="headerimage">
+      </div>
+    </div>
+
+  </header>
 
   <body>
+    <div class="flash">
+      <% flash.each do |message_type, message| %>
+      <%= message %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
+  <footer>
+    <h1>フッター</h1>
+    <ul>
+      <li><%= link_to("投稿一覧", posts_path) %></li>
+      <li><%= link_to("About", about_path) %></li>
+      <li><%= link_to("新規登録", new_user_path) %></li>
+      <li><%= link_to("user一覧", users_path) %></li>
+      <li><%= link_to("新規投稿", new_post_path) %></li>
+      <li><%= link_to("db", "/admin") %></li>
+    </ul>
+  </footer>
 </html>

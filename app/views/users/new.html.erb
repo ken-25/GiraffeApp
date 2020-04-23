@@ -1,0 +1,23 @@
+<% provide(:title, "新規投稿") %>
+<div class="main-content">
+  <h1>新規登録</h1>
+  <p>登録することで投稿できます</p>
+
+  <div class="user-new">
+    <dib class="error-message">
+      <% @user.errors.full_messages.each do |message| %>
+      <%= message %>
+      <% end %>
+    </dib>
+    <%= form_tag(users_path, method: :post) do %>
+      <p>ユーザー名</p>
+      <input name="name" value="<%= @user.name %>">
+      <p>メールアドレス</p>
+      <input name="email" type="email" value="<%= @user.email %>">
+      <p>パスワード</p>
+      <input name="password" type="password" value="<%= @user.password %>">
+      <br>
+      <input type="submit" value="登録">
+    <% end %>
+  </div>
+</div>

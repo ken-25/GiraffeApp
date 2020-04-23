@@ -1,0 +1,39 @@
+<div class="main-content">
+  <h1>編集する</h1>
+  <p>投稿を編集できます</p>
+
+  <div class="user-new">
+    <dib class="error-message">
+      <% @user.errors.full_messages.each do |message| %>
+      <%= message %>
+      <% end %>
+    </dib>
+    <%= form_tag(user_path(@user.id), method: :patch, multipart: true) do %>
+    <p>ユーザー名</p>
+    <input name="name" value="<%= @user.name %>">
+    <p>メールアドレス</p>
+    <input name="email" type="email" value="<%= @user.email %>">
+    <p>場所</p>
+    <i class="fas fa-map-marker-alt"></i><input name="place" value="<%= @user.place %>">
+    <p>種類</p>
+    <select name="giraffe_type" value="<%= @user.giraffe_type %>">
+      <option value="">--選択してください--</option>
+      <option value="マサイキリン">マサイキリン</option>
+      <option value="コルドファンキリン">コルドファンキリン</option>
+      <option value="ヌビアキリン">ヌビアキリン</option>
+      <option value="ナイジェリアキリン">ナイジェリアキリン</option>
+      <option value="アミメキリン">アミメキリン</option>
+      <option value="ケープキリン">ケープキリン</option>
+      <option value="アンゴラキリン">アンゴラキリン</option>
+    </select>
+    <p>体長</p>
+    <input name="body_length" value="<%= @user.body_length %>">
+    <p>プロフィール画像</p>
+    <input type="file" name="image" value="<%= @user.img_name %>"><br>
+    <input type="submit" value="保存">
+    <% end %>
+    <p><%= link_to("パスワードの変更", edit_user_password_path(@user)) %></p>
+
+  </div>
+  <%= link_to("投稿一覧", posts_path) %>
+</div>

@@ -1,0 +1,8 @@
+<% provide(:title, "投稿一覧") %>
+<div class="main-content">
+  <h1>投稿一覧</h1>
+  <p>ここは投稿一覧です</p>
+
+  <%= link_to("新規投稿", new_post_path) %>
+  <%= render partial: 'posts/posts', locals: { posts: @posts } %>
+</div>
